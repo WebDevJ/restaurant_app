@@ -1,3 +1,3 @@
-class Party < ActiveRecord::base
+class Party < ActiveRecord::Base
 
 end
