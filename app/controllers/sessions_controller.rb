@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       elsif user && user.authenticate(params[:password]) && user.empl_type == "Server"
         session[:current_user_id] = user.id
         redirect_to servers_path
-      elsif user && user.authenticate(params[:password]) && user.empl_type == "Admin"
+      elsif user && user.authenticate(params[:password]) && user.empl_type == "Manager"
         session[:current_user_id] = user.id
         redirect_to admins_path
       end
