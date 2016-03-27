@@ -1,13 +1,13 @@
 
 <div class="form">
 <h1>Add a Menu Item</h1>
- <%= form_for :menu do |f| %>
+ <%= form_for @menu do |f| %>
  <%= f.label :name %><br>
  <%= f.text_field :name %><br>
  <%= f.label :cuisine %><br>
  <%= f.text_field :cuisine %><br>
  <%= f.label :price %><br>
- <%= f.password_field :price%><br>
+ <%= f.text_field :price%><br>
  <%= f.submit "Create Item" %><br>
  <% end %>
 </div>

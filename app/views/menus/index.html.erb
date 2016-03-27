@@ -1,2 +1,10 @@
 <h1>Menu items Below</h1>
-<%= @menu %>
+<div class="menu">
+  <!-- <%= Menu.all.each do |menu| %> -->
+  <li>
+    <%= menu.name%>
+    <%= menu.cuisine%>
+    <%= menu.price%>
+  </li>
+  <!-- <% end %> -->
+</div>

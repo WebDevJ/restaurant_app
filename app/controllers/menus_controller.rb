@@ -12,17 +12,20 @@ class MenusController < ApplicationController
   def create
     @menu = Menu.new(menu_params)
     if @menu.save
-      redirect_to menus_path(@menu)
+      redirect_to menus_path
     else
       redirect_to request.referer
     end
   end
 
+  def show
+    @menus
+  end
 
   private
 
   def menu_params
-    params.require(:menus).permit(:name, :cuisine, :price)
+    params.require(:menu).permit(:name, :cuisine, :price)
   end
 
 end
