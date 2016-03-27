@@ -1,10 +1,13 @@
-<h1>Menu items Below</h1>
+<h3>Menu items Below</h3>
 <div class="menu">
   <!-- <%= Menu.all.each do |menu| %> -->
   <li>
-    <%= menu.name%>
-    <%= menu.cuisine%>
-    <%= menu.price%>
+    <%= menu.name %><span>  |  </span>
+    <%= menu.cuisine %><span>  |  </span>
+    <%= menu.price %><span>  |  </span>
+    <button type="button" name="Edit">Edit</button>
+    <button type="button" name="Delete">Delete</button>
+    <%= link_to "Delete", menu_path(menu.id), method: :delete%>
   </li>
   <!-- <% end %> -->
 </div>
