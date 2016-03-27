@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :destroy]
   #get 'welcome#index'
 
+  resources :admins
+  resources :chefs
+  resources :servers
+  
+#Creating route for diffrent workers
   get 'sessions/new' => 'sessions#new'
   post 'sessions' => 'sessions#create'
   delete 'sessions' => 'sessions#destroy'
