@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>RestaurantApp</title>
+  <%= stylesheet_link_tag "skeleton" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="skeleton.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <img src="http://icons.iconarchive.com/icons/bad-blood/yolks/128/enjoying-mah-playlist-icon.png" class="logo">
+  <img src="http://icons.iconarchive.com/icons/graphicloads/polygon/256/restaurant-icon.png" class="logo">
     <div class="login">
       <% if session[:current_user_id] %>
       <h1>Welcome Back</h1>
