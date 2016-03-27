@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 20160327150247) do
   create_table "orders", force: :cascade do |t|
     t.integer  "menu_id"
     t.integer  "party_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "completed"
+    t.boolean  "completed",  default: false
+    t.boolean  "payed",      default: false
   end
 
   create_table "parties", force: :cascade do |t|
     t.integer "table_num"
     t.integer "guests"
-    t.boolean "payed"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

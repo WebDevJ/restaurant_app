@@ -3,8 +3,10 @@ class CreateOrders < ActiveRecord::Migration
     create_table :orders do |t|
       t.references :menu
       t.references :party
+      t.references :user
       t.timestamps
-      t.boolean :completed
+      t.boolean :completed, default: FALSE
+      t.boolean :payed, default: FALSE
     end
   end
 end
