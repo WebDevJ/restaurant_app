@@ -5,6 +5,10 @@ class MenusController < ApplicationController
     @menus = Menu.all
   end
 
+  def show
+    @menu = Menu.find(params[:id])
+  end
+
   def new
     @menu = Menu.new
   end
@@ -22,6 +26,18 @@ class MenusController < ApplicationController
     @menus
   end
 
+#---
+#both edit and update work together , you need both
+  def edit
+   @menu = Menu.find(params[:id])
+ end
+
+ def update
+    @menu = Menu.find(params[:id])
+    @menu.update(menu_params)
+    redirect_to menus_path
+  end
+#---
   def destroy
    @menu = Menu.find(params[:id])
    @menu.destroy
