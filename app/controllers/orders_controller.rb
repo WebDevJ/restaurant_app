@@ -3,26 +3,21 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
-
-    # @items = Item.all
-
-    #find my server id session for my orders using .find() so just current server orders show up
-    #need menus table and parties table
-    @menu = Menu.all
+    @menus = Menu.all
     @parties = Party.all
   end
 
 
-  def show
-    @order = Order.find(params[:id])
-  end
+  # def show
+  #   @order = Order.find(params[:id])
+  # end
 
   def new
     @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.create(order_params)
     if @order.save
       redirect_to orders_path
     else
