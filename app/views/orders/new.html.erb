@@ -3,16 +3,16 @@
 <h1>Add an order </h1>
   <%= form_for @order do |f| %>
 
-  <%= select("post", "party_id", Party.all.collect {|p| [ p.table_num, p.guests, p.id ] }, {prompt: 'Select Party'}) %>
+  <%= select("order", "party_id", Party.all.collect {|p| [ p.table_num, p.guests, p.id ] }, {prompt: 'Select Party'}) %>
 
   <br>
 
-  <%= select("post", "menu_id", Menu.all.collect {|p| [ p.name, p.price, p.id ] }, {prompt: 'Select Menu Item'}) %>
+  <%= select("order", "menu_id", Menu.all.collect {|p| [ p.name, p.price, p.id ] }, {prompt: 'Select Menu Item'}) %>
 
   <br>
-  <%= f.hidden_field :user_id, :value => params[:id] %>
+  <%= f.hidden_field :user_id, :value => session[:current_user_id] %>
 
   <%= f.submit "Add order"%><br>
   <% end %>
   </div>
-<%= link_to "See all Orders", orders_path, method: :get%>
+<%= link_to "See all Orders", orders_path%>
