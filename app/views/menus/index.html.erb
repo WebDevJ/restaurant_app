@@ -1,12 +1,7 @@
-<h3>Menu items Below</h3>
-<div class="order">
-  <!-- <%= Menu.all.each do |menu| %> -->
-  <li>
-    <%= menu.name %><span>  |  </span>
-    <%= menu.cuisine %><span>  |  $</span>
-    <%= menu.price %><span> |  </span>
-    <%= link_to "Edit", edit_menu_path(menu.id)%>
-    <%= link_to "Delete", menu_path(menu.id), method: :delete%>
-  </li>
+<div class="menu">
+  <h3>Menu items below</h3>
+    <!-- <%= Menu.all.each do |menu| %> -->
+    <%= render partial: 'item', locals: {menu: menu} %>
   <!-- <% end %> -->
 </div>
+<%= link_to "New Menu Item", new_menu_path%>
