@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160328170853) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "menus", force: :cascade do |t|
     t.string  "name"
     t.string  "cuisine"
@@ -27,8 +30,8 @@ ActiveRecord::Schema.define(version: 20160328170853) do
     t.integer "party_id", null: false
   end
 
-  add_index "menus_parties", ["menu_id", "party_id"], name: "index_menus_parties_on_menu_id_and_party_id"
-  add_index "menus_parties", ["party_id", "menu_id"], name: "index_menus_parties_on_party_id_and_menu_id"
+  add_index "menus_parties", ["menu_id", "party_id"], name: "index_menus_parties_on_menu_id_and_party_id", using: :btree
+  add_index "menus_parties", ["party_id", "menu_id"], name: "index_menus_parties_on_party_id_and_menu_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "menu_id"
