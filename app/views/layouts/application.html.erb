@@ -1,13 +1,34 @@
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>RestaurantApp</title>
+  <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <img src="http://icons.iconarchive.com/icons/graphicloads/polygon/256/restaurant-icon.png" class="logo">
+    <div class="login">
+      <% if session[:current_user_id] %>
+      <h1>Welcome Back</h1>
+      <%= link_to "#{User.find(session[:current_user_id]).username}", user_path(session[:current_user_id]) %> ||
+      <%= link_to "Logout", sessions_path, method: :delete %>
+      <% else %>
+      <p>Already A Memeber</p>
+      <% #TODO what's a form_tag for %>
+      <%= form_tag(sessions_path) do%>
+      <%= label_tag :username %>:
+      <%= text_field_tag :username %>
+      <br>
+      <%= label_tag :password %>:
+      <%= password_field_tag :password %>
+      <br><br>
+      <%= submit_tag "Login"%>
+      <% end %>
+      <% end %>
+    </div>
 <%= yield %>
 
 </body>
