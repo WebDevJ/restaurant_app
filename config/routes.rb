@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :chefs
   resources :servers
   resources :menus
+  resources :orders
+
+
 
 
 

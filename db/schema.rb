@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160327150247) do
   end
 
   create_table "parties", force: :cascade do |t|
-    t.integer "table_num"
+    t.string  "table_num"
     t.integer "guests"
   end
 
