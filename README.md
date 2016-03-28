@@ -1,5 +1,9 @@
+
 # restaurant_app
 Rails app for restaurant
+
+I am on Heroku @ :
+https://restaurant-app-1.herokuapp.com/
 
 ### UserStories:
 1. As a server I should be able to see all parties in restaurant
