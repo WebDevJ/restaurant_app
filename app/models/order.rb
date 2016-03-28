@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
-  has_many :items
+  belongs_to :menu
   belongs_to :party
+  belongs_to :user
 end
