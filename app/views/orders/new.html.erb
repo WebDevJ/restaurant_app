@@ -1,6 +1,7 @@
 
 <div class="form">
 <h1>Add an order </h1>
+
   <%= form_for @order do |f| %>
 
   <%= select("order", "party_id", Party.all.collect {|p| [ p.table_num, p.guests, p.id ] }, {prompt: 'Select Party'}) %>

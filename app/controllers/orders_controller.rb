@@ -3,6 +3,11 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+
+    #find my server id session for my orders using .find() so just current server orders show up
+    #need menus table and parties table
+    @menu = Menu.all
+    @parties = Party.all
   end
 
 
